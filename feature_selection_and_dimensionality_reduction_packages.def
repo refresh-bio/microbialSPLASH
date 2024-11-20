@@ -1,0 +1,42 @@
+BootStrap: docker
+From: ubuntu:20.04
+
+%post
+    # Avoid interactive prompts by setting non-interactive mode
+    export DEBIAN_FRONTEND=noninteractive
+
+    # Update and install dependencies
+    apt-get update && apt-get upgrade -y
+    apt-get install -y \
+        python3.9 \
+        python3-pip \
+        python3.9-venv \
+        python3.9-dev \
+        build-essential \
+        libatlas-base-dev \
+        libopenblas-dev \
+        liblapack-dev \
+        libffi-dev \
+        wget \
+        locales
+
+    # Set time zone to UTC
+    ln -fs /usr/share/zoneinfo/UTC /etc/localtime
+    dpkg-reconfigure --frontend=noninteractive tzdata
+
+    # Set locale to en_US.UTF-8
+    locale-gen en_US.UTF-8
+    update-locale LANG=en_US.UTF-8
+
+    # Install Python packages (numpy, pandas, networkx, scipy, scikit-learn, umap)
+    python3.9 -m pip install --upgrade pip
+    python3.9 -m pip install numpy pandas networkx scipy scikit-learn umap
+
+%runscript
+    # Default behavior when the container is run
+    exec python3.9 "$@"
+
+%environment
+    # Set up environment variables for Python 3.9
+    export PATH=/usr/bin/python3.9:$PATH
+    export PYTHONPATH=/usr/lib/python3.9/site-packages:$PYTHONPATH

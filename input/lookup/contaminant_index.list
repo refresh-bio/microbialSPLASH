@@ -1,0 +1,4 @@
+./input/lookup/illumina_adapters.fasta
+./input/lookup/UniVec.fasta
+./input/lookup/SRA_synthetic_barcodes.fasta
+
