@@ -1,21 +1,21 @@
 # microbialSPLASH 
 
-We present a set of tools for the analysis of microbial data. The package requires [SPLASH](https://github.com/refresh-bio/SPLASH) to be installed on a computer.
+We present a set of tools extending SPLASH for microbial sequencing data. The package requires [SPLASH](https://github.com/refresh-bio/SPLASH) to be installed.
 
 microbialSPLASH includes the following modules:
 * *SPLASH alignment* used for CRISPR repeats identification in the Human Microbiome Project data,
-* *SPLASH clustering* employed for strain classification,
+* *SPLASH clustering* employed for strain classification.
 
 ## SPLASH alignment
 
-Splash alignment pipeline consists of two scripts: `./assemble_and_align.py` and `./extract_cas.py`.
+The SPLASH alignment pipeline consists of two scripts: `./assemble_and_align.py` and `./extract_cas.py`.
 
 #### `./assemble_and_align.py`
 The script performs the following actions:
   1. Identification of anchors from specified FASTQ files.
   2. Optional positive and negative filtering of anchors using provided FASTA files.
   3. Generation of compactors seeded by anchors independently for each FASTQ.
-  4. Alignment of the compactors against a specified target database in the FASTA format.
+  4. Alignment of the compactors to a specified target database in the FASTA format.
        
 #### Usage:
 
@@ -53,7 +53,7 @@ The script produces the following files in the output directory:
 
 The script performs the following actions:
 1. Extraction of compactor alignments targeting CAS proteins.
-2. Deduplication of overlapping alignments using greedy approach.
+2. Deduplication of overlapping alignments using a greedy algorithm.
 3. Extraction of corresponding compactors.
 
 #### Usage
@@ -72,7 +72,7 @@ Positional arguments:
 
 Options:
 * `-h`, `--help` - show this help message and exit
-* `--out_dir OUT_DIR` -  output directory with results of analyzes (default: `out-cas`)
+* `--out_dir OUT_DIR` -  output directory with results of analysis (default: `out-cas`)
 
 #### Output
 
