@@ -130,6 +130,7 @@ To set up the singularity image:
 ```sh
 singularity build feature_selection_packages.sif feature_selection_and_dimensionality_reduction_packages.def
 ```
+This step required 70.1190 seconds in a compute environment with 32 CPU cores and 235.18Gb of availabile memory.
 
 #### Running the feature extraction script
 To run the feature extraction script, provide 3 arguments: 
