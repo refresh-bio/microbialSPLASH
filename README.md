@@ -201,3 +201,7 @@ Clustering outputs are written to the directory in which the clustering script w
 George Henderson, Adam Gudys, Tavor Baharav, Punit Sundaramurthy, Marek Kokot, Peter L. Wang, Sebastian Deorowicz, Allison F. Carey, Julia Salzman.
 [Ultra-efficient, unified discovery from microbial sequencing with SPLASH and precise statistical assembly](https://www.biorxiv.org/content/10.1101/2024.01.18.576133v1.full)
 bioRxiv 2024.01.18.576133 (2024)
+
+## System information
+
+Code was tested in Stanford Sherlock computing node environments. For more information, please access this resource: https://www.sherlock.stanford.edu/docs/tech/#resources.
