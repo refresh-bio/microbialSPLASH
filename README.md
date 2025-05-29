@@ -128,7 +128,7 @@ Here, we provide a script to generate the 5 SPLASH feature matrices described in
 
 To set up the singularity image: 
 ```sh
-singularity build feature_selection_packages.sif feature_selection_packages.def
+singularity build feature_selection_packages.sif feature_selection_and_dimensionality_reduction_packages.def
 ```
 
 #### Running the feature extraction script
