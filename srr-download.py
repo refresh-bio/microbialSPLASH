@@ -21,7 +21,7 @@ def download_srr(srr: str):
     proc = subprocess.Popen(cmd) 
     ec = proc.wait()
     
-    beg = end
+    #beg = end
   
     return ec
 
