@@ -81,9 +81,11 @@ The script produces the following files in the output directory:
 * `cas-compactors.fasta` - corresponding compactors sequences.
 
 ### Example: CRISPR repeats identification in the Human Microbiome Project data
+In-code annotations provide expected runtimes on a machine configured with 10 CPU cores and 16Gb memory. Example outputs are provided.
 ```bash
 # download in parallel 3 first HMP project runs
-# (please remove --n_first parameter to download all HMP runs)  
+# (please remove --n_first parameter to download all HMP runs)
+# this Python script took 243 seconds to run 
 ./srr-download.py \
 	--n_threads 16 \
 	--n_first 3 \
@@ -91,12 +93,14 @@ The script produces the following files in the output directory:
 	./input/samples   
 
 # create list of R1 FASTQ files
+# this and the following system commands took 1 second to run
 ls ./input/samples/*_1.fastq > ./input/samples.list
 
 # concatenate partial files into single one
 cat ./input/uniprot/*.fa > ./input/uniprotkb_not_eukaryota.fa
 
 # run the pipeline against non-eukariotic UniProtKbB sequences
+# this step took 2135 seconds to run
 ./assemble_and_align.py \
 	--positive_index_list ./input/lookup/positive_index.list \
 	--positive_index_k 23 \
@@ -106,7 +110,8 @@ cat ./input/uniprot/*.fa > ./input/uniprotkb_not_eukaryota.fa
 	./input/samples.list \
 	./input/uniprotkb_not_eukaryota.fa \
 	
-# extract and analyze CAS-targeted hits	
+# extract and analyze CAS-targeted hits
+# this step took 40 seconds to run
 ./extract_cas.py \
 	--out_dir out-cas \
 	./input/samples.list \
